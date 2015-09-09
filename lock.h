@@ -81,7 +81,7 @@ static inline void spinlock_unit(struct spinlock *lock) {
 }
 
 
-#endif // USE_PTHREAD_LOCK
+#else
 
 struct rwlock {
 	int read;
@@ -138,5 +138,7 @@ static inline void spinlock_unlock(struct spinlock *lock) {
 
 static inline void spinlock_unit(struct spinlock *lock) {
 }
+
+#endif // USE_PTHREAD_LOCK
 
 #endif // _lock_h_
